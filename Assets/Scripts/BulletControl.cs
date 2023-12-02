@@ -15,14 +15,12 @@ public class BulletControl : MonoBehaviour
         _animator = GetComponent<Animator>();
         _rigid2D.velocity = new Vector2(0f, veloY * speed);
     }
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == ("Enemy"))
         {
             _animator.SetBool("sinoexplotamecuelgo",true);
-            Destroy(bala);
+            Destroy(bala,1f);
         }
         else
         {
